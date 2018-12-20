@@ -4,7 +4,7 @@ import * as React from "react";
 
 export interface EntypoIconProps extends React.SVGAttributes<SVGElement> {
   readonly size: number;
-  readonly icon: EntypoIconName;
+  readonly icon?: EntypoIconName;
   readonly spin?: boolean;
   readonly entity?: EntypoManagerEntity;
 }
@@ -27,6 +27,8 @@ export class EntypoIcon extends React.PureComponent<EntypoIconProps> {
       ...restProps
     } = this.props;
 
+    const finalIcon = entity ? entity.icon : icon;
+
     const classNames = ["entypo-icon"];
     if (spin) {
       classNames.push("entypo-icon-spin");
@@ -45,7 +47,7 @@ export class EntypoIcon extends React.PureComponent<EntypoIconProps> {
 
     return (
       <svg {...finalProps}>
-        <use xlinkHref={`#entypo-icon-${icon}`} />
+        <use xlinkHref={`#entypo-icon-${finalIcon}`} />
       </svg>
     );
   }
