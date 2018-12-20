@@ -4,14 +4,14 @@
 
 ## Installation
 
-`npm install entypo-icons-core entypo-icons-utils entypo-icons-react --save`
+`npm install @entypo-icons/core @entypo-icons/utils @entypo-icons/react --save`
 
 ## Usage
 
 ### Sprite
 
 ```jsx
-import { EntypoIcon, EntypoSprite } from "entypo-icons-react";
+import { EntypoIcon, EntypoSprite } from "@entypo-icons/react";
 
 //  At the top level of app
 <App>

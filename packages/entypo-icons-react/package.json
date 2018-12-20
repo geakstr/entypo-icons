@@ -1,6 +1,6 @@
 {
-  "name": "entypo-icons-react",
-  "version": "0.1.3",
+  "name": "@entypo-icons/react",
+  "version": "1.0.0",
   "description": "Entypo+ icons as react components",
   "author": "Dmitry Kharitonov <geakstr@me.com>",
   "license": "MIT",
@@ -19,8 +19,8 @@
   },
   "peerDependencies": {
     "react": ">=0.16.0",
-    "entypo-icons-core": ">=0.1.0",
-    "entypo-icons-utils": ">=0.1.0"
+    "@entypo-icons/core": ">=0.1.0",
+    "@entypo-icons/utils": ">=0.1.0"
   },
   "devDependencies": {
     "@types/react": "16.7.17",
