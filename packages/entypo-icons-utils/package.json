@@ -1,0 +1,28 @@
+{
+  "name": "entypo-icons-utils",
+  "version": "0.1.0",
+  "description": "Entypo+ icons utils",
+  "author": "Dmitry Kharitonov <geakstr@me.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/geakstr/entypo-icons.git"
+  },
+  "main": "index.js",
+  "module": "index.es.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "dist": "npm run build && npm publish dist",
+    "build": "rm -rf ./dist && mkdir ./dist && cp ./package*.json ./dist && rollup --config",
+    "linkify": "npm link entypo-icons-core && npm run build && cd ./dist && npm link"
+  },
+  "peerDependencies": {
+    "entypo-icons-core": ">=0.1.0"
+  },
+  "devDependencies": {
+    "rollup": "0.68.0",
+    "rollup-plugin-babel-minify": "6.2.0",
+    "rollup-plugin-typescript2": "0.18.1",
+    "typescript": "3.2.2"
+  }
+}
