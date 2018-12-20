@@ -1,15 +1,3 @@
 {
-  "name": "entypo-icons",
-  "private": true,
-  "version": "0.1.0",
-  "description": "Entypo+ icons",
-  "author": "Dmitry Kharitonov <geakstr@me.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/geakstr/entypo-icons.git"
-  },
-  "scripts": {
-    "dist": "npm run build && npm publish dist"
-  }
+  "private": true
 }
