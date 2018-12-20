@@ -15,6 +15,16 @@ export class EntypoManager {
     });
   }
 
+  public static async fetchSprite(url: string) {
+    return new Promise<string>((resolve, reject) => {
+      const ajax = new XMLHttpRequest();
+      ajax.open("GET", url, true);
+      ajax.send();
+      ajax.onload = () => resolve(ajax.responseText);
+      ajax.onerror = () => reject();
+    });
+  }
+
   public static loadSvg(id: string, svg: string) {
     loadcss();
     if (document.getElementById(id)) {

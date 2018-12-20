@@ -18,11 +18,12 @@ export class EntypoSprite extends React.PureComponent<EntypoSpriteProps> {
     finalUrl ? this.fetch(finalUrl) : this.load(html);
   }
 
-  fetch = (url: string) => {
-    const ajax = new XMLHttpRequest();
-    ajax.open("GET", url, true);
-    ajax.send();
-    ajax.onload = () => this.load(ajax.responseText);
+  fetch = async (url: string) => {
+    try {
+      this.load(await EntypoManager.fetchSprite(url));
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   load = (html: string) => {
