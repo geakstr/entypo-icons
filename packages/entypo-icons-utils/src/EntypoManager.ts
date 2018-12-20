@@ -2,7 +2,9 @@ import { EntypoIconName } from "entypo-icons-core";
 
 export class EntypoManagerEntity {
   readonly icon: EntypoIconName;
-  readonly html: string;
+  readonly paths: string;
+  readonly getSvg: () => string;
+  readonly getSprite: () => string;
 }
 
 export class EntypoManager {
@@ -10,8 +12,8 @@ export class EntypoManager {
     if (document.getElementById("entypo-sprite")) {
       return;
     }
-    entities.forEach(({ icon, html }) => {
-      EntypoManager.loadSvg(`entypo-icon-sprite-${icon}`, html);
+    entities.forEach(({ icon, getSprite }) => {
+      EntypoManager.loadSvg(`entypo-icon-sprite-${icon}`, getSprite());
     });
   }
 

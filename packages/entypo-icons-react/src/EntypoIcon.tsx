@@ -1,21 +1,18 @@
 import { EntypoIconName } from "entypo-icons-core";
-import { EntypoManager } from "entypo-icons-utils";
+import { EntypoManager, EntypoManagerEntity } from "entypo-icons-utils";
 import * as React from "react";
 
 export interface EntypoIconProps extends React.SVGAttributes<SVGElement> {
   readonly size: number;
   readonly icon: EntypoIconName;
-  readonly html?: string;
   readonly spin?: boolean;
+  readonly entity?: EntypoManagerEntity;
 }
 
 export class EntypoIcon extends React.PureComponent<EntypoIconProps> {
   componentDidMount() {
-    if (this.props.html) {
-      EntypoManager.addIcons({
-        icon: this.props.icon,
-        html: this.props.html
-      });
+    if (this.props.entity) {
+      EntypoManager.addIcons(this.props.entity);
     }
   }
 
@@ -23,7 +20,7 @@ export class EntypoIcon extends React.PureComponent<EntypoIconProps> {
     const {
       size,
       icon,
-      html,
+      entity,
       spin = false,
       children,
       className,

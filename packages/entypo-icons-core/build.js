@@ -26,10 +26,10 @@ const svgs = fs
       encoding: "utf8"
     });
     const svg = cheerio.load(body)("svg");
-    const children = svg.html();
+    const paths = svg.html();
     const viewBox = svg.attr("viewBox");
     const symbol = `<symbol id="entypo-icon-${iconname}" viewBox="${viewBox}">${svg.html()}</symbol>`;
-    return { file, iconname, symbol, svg: body, children, viewBox };
+    return { file, iconname, symbol, svg: body, paths, viewBox };
   });
 
 // Sprite build
@@ -40,8 +40,8 @@ const svgs = fs
     `</svg>`
   ].join("");
   const srcCode = `const svg = '${sprite}';\nexport default svg;`;
-  const cjsCode = `"use strict";module.exports='${sprite}';`;
-  const esCode = `export default'${sprite}';`;
+  const cjsCode = `"use strict";\nmodule.exports = '${sprite}';`;
+  const esCode = `export default '${sprite}';`;
   fs.writeFileSync(`${__dirname}/src/sprite.svg`, sprite, {
     encoding: "utf8"
   });
@@ -85,19 +85,34 @@ const svgs = fs
   fs.removeSync(src), fs.mkdirSync(src);
   fs.removeSync(dist), fs.mkdirSync(dist);
   svgs.forEach(icon => {
-    const sprite = [
-      `<svg xmlns="http://www.w3.org/2000/svg">`,
-      `<symbol id="entypo-icon-${icon.iconname}" viewBox="${icon.viewBox}">${
-        icon.children
-      }</symbol>`,
-      `</svg>`
-    ].join("");
-    const exp = `{icon:"${icon.iconname}",html:'${sprite}'}`;
-    const srcCode = `export default ${exp} as { icon:"${
-      icon.iconname
-    }", html: string };`;
-    const cjsCode = `"use strict";module.exports=${exp};`;
-    const esCode = `export default${exp};`;
+    const exp = exportStatement => `var paths = '${icon.paths}';
+${exportStatement} {
+  icon: '${icon.iconname}',
+  paths: paths,
+  getSvg: function() {
+    var head = '<svg xmlns="http://www.w3.org/2000/svg"';
+    head += ' viewBox="${icon.viewBox}">';
+    var tail = '</svg>';
+    return head + paths + tail;
+  },
+  getSprite: function() {
+    var head = '<svg xmlns="http://www.w3.org/2000/svg">';
+    head += '<symbol';
+    head += ' id="entypo-icon-${icon.iconname}"';
+    head += ' viewBox="${icon.viewBox}">';
+    var tail = '</symbol></svg>';
+    return head + paths + tail;
+  }
+}`;
+    const as = ` as {
+  readonly icon: "${icon.iconname}",
+  readonly paths: string,
+  readonly getSvg: () => string,
+  readonly getSprite: () => string;
+}`;
+    const srcCode = exp("export default") + as;
+    const cjsCode = '"use strict";\n' + exp("module.exports = ");
+    const esCode = exp("export default");
     fs.writeFileSync(`${src}/${icon.iconname}.ts`, prettify(srcCode), {
       encoding: "utf8"
     });

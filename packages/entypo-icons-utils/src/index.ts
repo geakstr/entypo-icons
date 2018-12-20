@@ -1,1 +1,1 @@
-export { EntypoManager } from "./EntypoManager";
+export { EntypoManager, EntypoManagerEntity } from "./EntypoManager";
