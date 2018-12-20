@@ -1,6 +1,6 @@
 {
   "name": "entypo-icons-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Entypo+ icons utils",
   "author": "Dmitry Kharitonov <geakstr@me.com>",
   "license": "MIT",
@@ -20,6 +20,7 @@
     "entypo-icons-core": ">=0.1.0"
   },
   "devDependencies": {
+    "entypo-icons-core": ">=0.1.0",
     "rollup": "0.68.0",
     "rollup-plugin-babel-minify": "6.2.0",
     "rollup-plugin-typescript2": "0.18.1",

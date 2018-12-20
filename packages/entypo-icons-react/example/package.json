@@ -5,7 +5,10 @@
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "entypo-icons-core": ">=0.1.0",
+    "entypo-icons-utils": ">=0.1.0",
+    "entypo-icons-react": ">=0.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
