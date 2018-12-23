@@ -9,11 +9,11 @@
 
 ## Usage
 
-This package provides several options how to use it. Each of them has pros and cons described below. Choose right option for your cases.
+This package provides several options how to use it. Each of them has pros and cons described below. Choose the right option for your cases.
 
 ### Use `EntypoManager`
 
-In most cases this is **the best option** from a _user_ perspective, but it requires granular setup from a _developer_. `EntypoManager` builds icons library. Icons from library will be bundled into application and will be preloaded before actual usage at runtime.
+In most cases this is the best option from a user perspective, but it requires granular setup from a developer. `EntypoManager` builds icons library. Icons from library will be bundled into application and will be preloaded before actual usage at runtime.
 
 #### Pros
 
