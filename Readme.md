@@ -13,17 +13,17 @@ This package provides several options how to use it. Each of them has pros and c
 
 ### Use `EntypoManager`
 
-In most cases this is **the best option** from a _user_ perspective, but requires granular setup from a _developer_. `EntypoManager` builds icons library. Icons from library will be bundled into application and will be preloaded before actual usage at runtime.
+In most cases this is **the best option** from a _user_ perspective, but it requires granular setup from a _developer_. `EntypoManager` builds icons library. Icons from library will be bundled into application and will be preloaded before actual usage at runtime.
 
 #### Pros
 
-- Only imported icons will be bundled to application (small bundle size).
-- Icons will be preloaded before usage (user will see icons when application loaded).
+✅ Only imported icons will be bundled to application (small bundle size).
+✅ Icons will be preloaded before usage (user will see icons when application loaded).
 
 #### Cons
 
-- Need to import each icon separately (so boring).
-- In case of using a large number (say hundreds) of icons application bundle size will grow.
+❗️ Need to import each icon separately (so boring).
+❗️ In case of using a large number (say hundreds) of icons application bundle size will grow.
 
 ```jsx
 // Import each icon separately
@@ -52,12 +52,12 @@ This component will load all icons (as one sprite file) at once from remote host
 
 #### Pros
 
-- All icons will be loaded at once (useful, no need to import each icon separately).
-- Icons won't bundled into application (zero-cost from bundle size perspective).
+✅ All icons will be loaded at once (useful, no need to import each icon separately).
+✅ Icons won't bundled into application (zero-cost from bundle size perspective).
 
 #### Cons
 
-- It will takes some time to load sprite by HTTP (user will see nothing before icons are loaded).
+❗️ It will takes some time to load sprite by HTTP (user will see nothing before icons are loaded).
 
 ```jsx
 import { EntypoIcon, EntypoSprite } from "@entypo-icons/react";
@@ -88,12 +88,12 @@ This component will bundle all icons into application.
 
 #### Pros
 
-- All icons will be loaded at once (useful, no need to import each icon separately).
-- Icons will be preloaded before usage (user will see icons when application loaded).
+✅ All icons will be loaded at once (useful, no need to import each icon separately).
+✅ Icons will be preloaded before usage (user will see icons when application loaded).
 
 #### Cons
 
-- Bundle will contanis all icons (~60Kb gzipped).
+❗️ Bundle will contains all icons (~60Kb gzipped).
 
 ```jsx
 import sprite from "@entypo-icons/core/sprite";
