@@ -9,7 +9,7 @@
 
 ## Usage
 
-This package provides several options how to use it. Each of them has pros and cons described below.
+This package provides several options how to use it. Each of them has pros and cons described below. Choose right option for your cases.
 
 ### Use `EntypoManager`
 
