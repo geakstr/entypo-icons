@@ -59,7 +59,7 @@ EntypoManager.addIcons(iconCake, iconFlower);
 <EntypoIcon size={20} color="green" icon="flower" />
 ```
 
-### Asynchronous `<EntypoSprite />` (with remote sprite)
+### Asynchronous `<EntypoSprite />` (remote sprite)
 
 This component will load all icons (as one sprite file) at once from remote host.
 
@@ -90,7 +90,7 @@ import { EntypoIcon, EntypoSprite } from "@entypo-icons/react";
 ...
 ```
 
-### Synchronous `<EntypoSprite />` (with bundled sprite)
+### Synchronous `<EntypoSprite />` (bundled sprite)
 
 This component will bundle all icons into application.
 
