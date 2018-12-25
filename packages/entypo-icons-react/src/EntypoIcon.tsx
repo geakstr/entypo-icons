@@ -1,5 +1,5 @@
-import { EntypoIconName } from "entypo-icons-core";
-import { EntypoManager, EntypoManagerEntity } from "entypo-icons-utils";
+import { EntypoIconName } from "@entypo-icons/core";
+import { EntypoManager, EntypoManagerEntity } from "@entypo-icons/utils";
 import * as React from "react";
 
 export interface EntypoIconProps extends React.SVGAttributes<SVGElement> {

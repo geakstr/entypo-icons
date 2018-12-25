@@ -1,4 +1,4 @@
-import { EntypoManager } from "entypo-icons-utils";
+import { EntypoManager } from "@entypo-icons/utils";
 import * as React from "react";
 
 const SPRITE_DEFAULT_URL = "https://unpkg.com/entypo-icons-core/sprite.svg";

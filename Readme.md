@@ -36,7 +36,7 @@ In most cases this is the best option from a user perspective, but it requires g
 #### ✅ Pros
 
 - Only imported icons will be bundled to application (small bundle size).
-- Icons will be preloaded before usage (user will see icons when application loaded).
+- Icons will be preloaded before usage (user will see icons immediately after application was loaded).
 
 #### ❗️ Cons
 
@@ -97,7 +97,7 @@ This component will bundle all icons into application.
 #### ✅ Pros
 
 - All icons will be available (useful, no need to import each icon separately).
-- Icons will be preloaded before usage (user will see icons when application loaded).
+- Icons will be preloaded before usage (user will see icons immediately after application was loaded).
 
 #### ❗️ Cons
 

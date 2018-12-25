@@ -1,4 +1,4 @@
-import { EntypoIconName } from "entypo-icons-core";
+import { EntypoIconName } from "@entypo-icons/core";
 
 export class EntypoManagerEntity {
   readonly icon: EntypoIconName;
