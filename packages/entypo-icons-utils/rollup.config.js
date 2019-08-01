@@ -14,5 +14,5 @@ module.exports = {
     }
   ],
   plugins: [typescript({ clean: true }), minify({ comments: false })],
-  external: ["entypo-icons-core"]
+  external: ["@entypo-icons/utils"]
 };
